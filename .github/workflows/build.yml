@@ -1,2 +1,16 @@
-Using the configuration provided, add a new task named “Run Maven build” with 
-mvn clean test 
+name: Run Maven build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      # Run Maven build
+      - name: Run tests
+        run: mvn clean test
