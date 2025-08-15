@@ -1,0 +1,2 @@
+Using the configuration provided, add a new task named “Run Maven build” with 
+mvn clean test 
